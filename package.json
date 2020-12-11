@@ -1,0 +1,20 @@
+{
+  "name": "resume-pdf",
+  "version": "1.0.0",
+  "description": "A Node.js tool that creates a standard resume in PDF from a given configuration",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Unsuccessful-Technologies/resume-pdf.git"
+  },
+  "keywords": [],
+  "author": "Unsuccessful Technologies LLC",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Unsuccessful-Technologies/resume-pdf/issues"
+  },
+  "homepage": "https://github.com/Unsuccessful-Technologies/resume-pdf#readme"
+}
