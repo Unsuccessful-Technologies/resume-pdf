@@ -2,7 +2,7 @@ import jsPDF from 'jspdf';
 
 import { AddEducation, AddExperience, AddHeader, AddSummary, AddTopSkills, ContentConfig } from './utils';
 
-export default (content: ContentConfig) => {
+const ResumePDF: (content: ContentConfig) => jsPDF = (content: ContentConfig) => {
   const config = SetDocConfig(content);
   const {
     content: {
@@ -26,8 +26,10 @@ export default (content: ContentConfig) => {
 
   AddEducation(resume, config, educationConfig);
 
-  resume.save();
+  return resume
 };
+
+export default ResumePDF
 
 function SetDocConfig(content: ContentConfig): DocumentConfig {
   const result: DocumentConfig = {
