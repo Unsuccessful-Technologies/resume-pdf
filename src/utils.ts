@@ -148,7 +148,7 @@ function ParseForBold(file: jsPDF, text: string, x: number, y: number, options?:
   });
 }
 
-function TwoDigits(value: number) {
+export function TwoDigits(value: number) {
   return Math.round(value * 100) / 100;
 }
 
