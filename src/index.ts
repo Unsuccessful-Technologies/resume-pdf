@@ -26,10 +26,10 @@ const ResumePDF: (content: ContentConfig) => jsPDF = (content: ContentConfig) =>
 
   AddEducation(resume, config, educationConfig);
 
-  return resume
+  return resume;
 };
 
-export default ResumePDF
+export default ResumePDF;
 
 function SetDocConfig(content: ContentConfig): DocumentConfig {
   const result: DocumentConfig = {

@@ -1,6 +1,6 @@
 {
   "name": "resume-pdf",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A Node.js tool that creates a standard resume in PDF from a given configuration",
   "files": [
     "lib/**/*"
