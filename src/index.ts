@@ -1,6 +1,6 @@
 import jsPDF from 'jspdf';
-
-import { AddEducation, AddExperience, AddHeader, AddSummary, AddTopSkills, ContentConfig } from './utils';
+import { ContentConfig, DocumentConfig } from './types';
+import { AddEducation, AddExperience, AddHeader, AddSummary, AddTopSkills } from './utils';
 
 const ResumePDF: (content: ContentConfig) => jsPDF = (content: ContentConfig) => {
   const config = SetDocConfig(content);
@@ -29,8 +29,6 @@ const ResumePDF: (content: ContentConfig) => jsPDF = (content: ContentConfig) =>
   return resume;
 };
 
-export default ResumePDF;
-
 function SetDocConfig(content: ContentConfig): DocumentConfig {
   const result: DocumentConfig = {
     margins: {
@@ -56,30 +54,5 @@ function SetDocConfig(content: ContentConfig): DocumentConfig {
   return result;
 }
 
-export interface DocumentConfig {
-  margins: Margins;
-  pageSize: PageSize;
-  fontConfig: FontConfig;
-  currentY: number;
-  sectionTitleSpacing: number;
-  sectionTextSpacing: number;
-  sectionEndSpacing: number;
-  content: ContentConfig;
-}
-
-interface Margins {
-  top: number;
-  left: number;
-  bottom: number;
-  right: number;
-}
-
-interface PageSize {
-  height: number;
-  width: number;
-}
-
-export interface FontConfig {
-  titleSize: number;
-  textSize: number;
-}
+export default ResumePDF;
+export { ContentConfig, JobPosition } from './types';

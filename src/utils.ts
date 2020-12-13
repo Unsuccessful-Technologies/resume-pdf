@@ -1,6 +1,16 @@
 import { jsPDF, TextOptionsLight } from 'jspdf';
-import { DocumentConfig, FontConfig } from './index';
+import {
+  DocumentConfig,
+  FontConfig,
+  HeaderConfig,
+  SummaryConfig,
+  TopSkillsConfig,
+  ExperienceConfig,
+  EducationConfig,
+  JobPosition,
+} from './types';
 
+// ResumePDF Helper Functions
 export function AddHeader(file: jsPDF, docConfig: DocumentConfig, config: HeaderConfig) {
   const { name, phone, email } = config;
   SetSectionCurrentY(file, docConfig, name);
@@ -126,6 +136,7 @@ export function AddEducation(file: jsPDF, docConfig: DocumentConfig, config: Edu
   EndSectionWithLine(file, docConfig, yDelta);
 }
 
+// Internal Helper Functions
 function ParseForBold(file: jsPDF, text: string, x: number, y: number, options?: any) {
   let startX = x;
   const fontSize = file.getFontSize();
@@ -211,45 +222,4 @@ function SetFont(file: jsPDF, fontConfig: FontConfig, type?: string) {
       file.setFontSize(textSize);
     }
   }
-}
-
-export interface HeaderConfig {
-  name: string;
-  phone: string;
-  email: string;
-}
-
-export interface SummaryConfig {
-  description: string;
-}
-
-export interface TopSkillsConfig {
-  skills: string[];
-}
-
-export interface ExperienceConfig {
-  exp: JobPosition[];
-}
-
-export interface JobPosition {
-  company: string;
-  position: string;
-  year_start: string;
-  year_end: string;
-  bullets: string[];
-}
-
-export interface EducationConfig {
-  school: string;
-  degree: string;
-  gpa: string;
-  grad_year: string;
-}
-
-export interface ContentConfig {
-  header: HeaderConfig;
-  summary: SummaryConfig;
-  top_skills: TopSkillsConfig;
-  experience: ExperienceConfig;
-  education: EducationConfig;
 }
