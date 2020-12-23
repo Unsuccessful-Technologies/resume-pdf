@@ -62,9 +62,9 @@ export function AddTopSkills(file: jsPDF, docConfig: DocumentConfig, config: Top
 
   // Add 6 Skills
   const cellWidth = width / 3 - 0.3;
-  const leftTableStart = left + 0.6;
+  const leftTableStart = left + 0.1;
   const textConfig: TextOptionsLight = {
-    align: 'center',
+    align: 'left',
     lineHeightFactor: 1.9,
   };
   SetFont(file, fontConfig, 'top_skills_table');
